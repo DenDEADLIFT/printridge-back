@@ -5,7 +5,7 @@ import {
 } from 'express';
 import { RequestCustom } from '../utils/types';
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3001 } = process.env;
 
 const app = express();
 
