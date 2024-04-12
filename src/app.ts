@@ -11,18 +11,18 @@ const app = express();
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect(MONGO_URL);
+mongoose.connect('mongodb://localhost:27017/printridgedb');
 
 
 app.use(express.json());
-//app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); 
 
 app.use('/cartridges', cartridges);   
 
 
 
-app.use(errorMdlwr);
+app.use(errorMdlwr); 
 
-app.listen(PORT, () => {
+app.listen(3002, () => {
   console.log(`Приложение слушает порт: ${PORT}`);
 });
