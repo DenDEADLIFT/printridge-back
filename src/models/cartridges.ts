@@ -35,6 +35,6 @@ import {
     },
   });
   
-  const CartridgesModel = model<ICartridges>('cartridges', cartridgesSchema);
+  const CartridgesModel = model<ICartridges>('cartridge', cartridgesSchema);
   
-  export default CartridgesModel;
+  export default CartridgesModel; 
