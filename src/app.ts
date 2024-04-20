@@ -16,6 +16,9 @@ mongoose.connect(MONGO_URL);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
+app.use('/404', (req, res) => {
+  res.status(404).json({ message: 'Not Found' });
+});
 
 app.use('/cartridges', cartridges);   
 
