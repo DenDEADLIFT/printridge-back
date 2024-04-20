@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cartridges from './routes/cartridges';
 import errorMdlwr from './middlewares/error';
+import cors from 'cors';
 
 const PORT = 3002;
 
@@ -16,6 +17,12 @@ mongoose.connect(MONGO_URL);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
+
+app.use(cors({
+  origin: 'http://localhost:3000',
+  methods: 'GET, POST'
+}));
+
 app.use('/404', (req, res) => {
   res.status(404).json({ message: 'Not Found' });
 });
